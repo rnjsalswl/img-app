@@ -2,25 +2,27 @@
     margin:0 auto;
     padding:0;
 }
+.figcaption{
+    font-weight: bolder;
+}
 .columns{
     column-width:350px;
     column-gap:15px;
 }
 .columns figure{
     display: inline-block;
-    border:1px solid rgba(0,0,0,0.2);
+    border-radius: 20px;
     margin:0;
     padding:10px;
     margin-bottom:15px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
 .columns figure img{
     width:100%;
+    border-radius: 18px;
 }
 
 .columns figure figcaption{
-    border-top:1px solid rgba(0,0,0,0.2);
     padding:10px;
     margin-top: 11px;
 }

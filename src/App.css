@@ -1,9 +1,60 @@
-*{margin:0 auto;}
-a{text-decoration: none;color:inherit;}
-.body{
-  width:95%;
+* {
+  margin: 0 auto;
 }
-.nav {height:8vh;line-height: 8vh;}
-.users{float :right;}
 
-.btnHome{color:#fff;background-color: #000;border-radius: 20px;width:80px;height: 40px;border:none;}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.body {
+  width: 95%;
+}
+
+.nav {
+  height: 8vh;
+  line-height: 8vh;
+}
+
+.users {
+  float: right;
+}
+
+.btnHome {
+  color: #fff;
+  background-color: #000;
+  border-radius: 20px;
+  width: 80px;
+  height: 40px;
+  border: none;
+}
+
+.btnUser {
+  color: #fff;
+  background-color: rgb(104, 104, 104);
+  border-radius: 20px;
+  width: 80px;
+  height: 40px;
+  border: none;
+  margin-right: 10px;
+}
+
+.btnCreateUser {
+  color: #fff;
+  background-color: rgb(104, 104, 104);
+  border-radius: 20px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  margin-right: 10px;
+}
+
+.btnLogin {
+  color: #fff;
+  background-color: rgb(92, 133, 86);
+  border-radius: 20px;
+  width: 80px;
+  height: 40px;
+  border: none;
+  margin-right: 10px;
+}

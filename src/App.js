@@ -20,13 +20,13 @@ const App = () => {
         <div className="nav">
           <Link to="/"><button className="btnHome">Home</button></Link>
           <div className="users"> 
-          <Link to="/User">User </Link>
-          <Link to="/CreateUser">CreateUser</Link>
+          <Link to="/User"><button className="btnUser">User</button></Link>
+          <Link to="/CreateUser"><button className="btnCreateUser">CreateUser</button></Link>
           {authenticated ? (
             <LogoutButton logout={logout}/>
           ):(
             <Link to="/login">
-              <button>Login</button>
+              <button className="btnLogin">Login</button>
             </Link>
           )}
 
