@@ -3,7 +3,7 @@ a{text-decoration: none;color:inherit;}
 .body{
   width:95%;
 }
-.nav {height:8vh;background-color: rgb(179, 179, 179);line-height: 8vh;}
+.nav {height:8vh;line-height: 8vh;}
 .users{float :right;}
 
 .btnHome{color:#fff;background-color: #000;border-radius: 20px;width:80px;height: 40px;border:none;}
