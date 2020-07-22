@@ -1,26 +1,64 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import AuthRoute from './AuthRoute';
 import './App.css';
+import {signIn} from './auth';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Home, User, CreateUser } from './pages';
+import LogoutButton from './LogoutButton';
+import LoginForm from './LoginForm';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState(null);
+  const authenticated = user != null;
+
+  const login = ({email, password}) =>setUser(signIn({email, password}));
+  const logout = () => setUser(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="body">
+      <Router>
+        <div className="nav">
+          <Link to="/"><button className="btnHome">Home</button></Link>
+          <div className="users"> 
+          <Link to="/User">User </Link>
+          <Link to="/CreateUser">CreateUser</Link>
+          {authenticated ? (
+            <LogoutButton logout={logout}/>
+          ):(
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          )}
+
+          </div>
+          
+        </div>
+        
+        <Route exact path='/' component={Home} />
+        <main>
+          <Switch>
+          <Route exact path='/User' component={User} />
+          <Route
+            path="/login"
+            render={props => (
+              <LoginForm authenticated={authenticated} login={login}{...props}/>
+            )}
+          />
+          <AuthRoute
+            authenticated={authenticated}
+            path="/User"
+            render={props=><User user={user}{...props}/>}
+          />
+          </Switch>
+        </main>
+        <Route exact path='/CreateUser' component={CreateUser} />
+      </Router>
     </div>
-  );
+
+  )
+
 }
+
+
 
 export default App;
