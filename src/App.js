@@ -3,9 +3,10 @@ import AuthRoute from './AuthRoute';
 import './App.css';
 import {signIn} from './auth';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-import { Home, User, CreateUser } from './pages';
+import { Home, User } from './pages';
 import LogoutButton from './LogoutButton';
 import LoginForm from './LoginForm';
+import CreateUserForm from './CreateUserForm';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -19,7 +20,8 @@ const App = () => {
       <Router>
         <div className="nav">
           <Link to="/"><button className="btnHome">Home</button></Link>
-          <div className="users"> 
+          <div className="users">
+            {/* board/:id */}
           <Link to="/User"><button className="btnUser">User</button></Link>
           <Link to="/CreateUser"><button className="btnCreateUser">CreateUser</button></Link>
           {authenticated ? (
@@ -49,9 +51,9 @@ const App = () => {
             path="/User"
             render={props=><User user={user}{...props}/>}
           />
+          <Route path='/CreateUser' render={props => (<CreateUserForm />)}/>
           </Switch>
         </main>
-        <Route exact path='/CreateUser' component={CreateUser} />
       </Router>
     </div>
 
